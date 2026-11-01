@@ -1,0 +1,13 @@
+{
+  "name": "Dinavahi Lohith Sai",
+  "short_name": "Lohith Sai",
+  "description": "Backend developer in Vijayawada working in Go, Rust and TypeScript, looking for an SDE-1 role.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fcfcfb",
+  "theme_color": "#fcfcfb",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
