@@ -1,66 +1,121 @@
-# Lohit's portfolio
+# lohit.dev
 
-Next.js (App Router) and TypeScript. It builds to a fully static site, so there is no server to run.
+Personal portfolio of **Dinavahi Lohith Sai** — backend developer in Vijayawada.  
+Built with Next.js 15, TypeScript and a lot of care.
 
-## Run it
+→ **[lohitdev.vercel.app](https://lohitdev.vercel.app)**
+
+---
+
+## Stack
+
+| Layer           | Choice                     |
+| --------------- | -------------------------- |
+| Framework       | Next.js 15 (App Router)    |
+| Language        | TypeScript                 |
+| Styling         | Vanilla CSS — no framework |
+| Font            | Geist Sans                 |
+| Package manager | Bun                        |
+| Deploy          | Vercel                     |
+
+---
+
+## Run locally
 
 ```bash
-npm install
-npm run dev        # http://localhost:3000
-npm run build      # static site in ./out
-npm run typecheck
+bun install
+bun dev          # → http://localhost:3000
+bun run build
+bun run typecheck
+bun run format
 ```
 
-## Change what it says
+---
 
-Every word on the page lives in `src/data/content.ts`. Edit that file and nothing else.
+## Editing content
 
-- **Resume:** replace `public/lohit-sai-resume.pdf` with a newer PDF (keep the file name) and the "Resume" link in the header updates.
-- **Share preview:** `public/og.png` (1200 x 630) is the card shown when the link is pasted into LinkedIn, WhatsApp or X.
-- **Favicon:** `src/app/icon.svg` and `src/app/apple-icon.png` match the "L" tile in the header.
-- **Projects, jobs, awards:** add, remove or reorder items in the arrays.
-
-## Where things are
+Every word on the page lives in one file:
 
 ```
-src/app/layout.tsx       fonts (Geist), page title, social preview, theme colour
-src/app/page.tsx         the page, plus search-engine data about you
-src/app/globals.css      all styling, light and dark
-src/components/Hero.tsx  the hover glow and scroll fade
-src/components/Motion.tsx entrances as each section scrolls into view, and count-ups
-src/components/Work.tsx  the project picker (hover, click, arrow keys)
-src/data/content.ts      all the content
+src/data/content.ts
 ```
 
-## Deploy to lohitdev.vercel.app
+Edit that file and nothing else to change what the page says — name, title, projects, experience, awards, contact.
 
-1. Put this folder in a GitHub repo.
-2. In Vercel, open the existing `lohitdev` project, go to Settings, then Git, and connect that repo.
-   (Or import the repo as a new project and give it the same name.)
-3. Push. Vercel detects Next.js and builds it. No settings to change.
+### Assets
 
-## Notes
+| File                          | Purpose                                     |
+| ----------------------------- | ------------------------------------------- |
+| `public/lohit-sai-resume.pdf` | Resume — replace the PDF, keep the filename |
+| `public/images/og.png`        | Social preview card (1200 × 630)            |
+| `public/icons/icon.svg`       | PWA / manifest icon                         |
+| `public/icons/apple-icon.png` | Apple touch icon                            |
+| `src/app/icon.svg`            | Adaptive favicon (Next.js auto-serves)      |
+| `src/app/apple-icon.png`      | Apple icon meta (Next.js auto-serves)       |
 
-- Everything below the hero animates in as it scrolls into view, using IntersectionObserver (works in every browser). If it is unavailable, nothing is hidden.
-- The hero effects switch off for visitors who prefer reduced motion, and the hover glow is skipped on touch screens.
-- Dark mode follows the visitor's system setting.
+---
 
-## Phones
+## Project structure
 
-Below 700px wide the site switches to its own layout, with the same content and the same data file:
-an editorial home with four ruled facts, the same Work picker stacked, Journey as a rail, Stack as grouped
-chips with two award figures, and Contact as a headline, an envelope drawing and four rows. A floating pill
-(`MobileNav.tsx`) jumps between sections and shows where you are. Desktop is unchanged: blocks marked
-`m-only` show only on phones, blocks marked `d-only` only on larger screens. The phone-only words
-(`facts`, `stackGroups`, `contactSmall`) are at the bottom of `src/data/content.ts`.
+```
+src/
+  app/
+    layout.tsx        metadata, fonts, theme script
+    page.tsx          page root + JSON-LD structured data
+    globals.css       all styling — light and dark
+    icon.svg          favicon (Next.js file convention)
+    apple-icon.png    apple touch icon (Next.js file convention)
+  components/
+    Hero.tsx          hover glow, scroll fade
+    Work.tsx          project picker — hover, click, arrow keys
+    Motion.tsx        scroll-driven entrances and count-ups
+    JourneyRail.tsx   phone: dot walks down the experience rail
+    Scrub.tsx         phone: scroll-driven section transitions
+    Stack.tsx         tech stack display
+    Awards.tsx        awards ledger
+    Contact.tsx       contact section
+    Header.tsx        nav, logo, resume link
+    Footer.tsx        footer
+    MobileNav.tsx     phone: floating section pill
+    ThemeToggle.tsx   light / dark toggle
+  data/
+    content.ts        ← all site content lives here
+  lib/
+    void.ts           utilities
 
-Phone motion is tied to scrolling, not to timers: `JourneyRail.tsx` (a dot walks down the rail and the stops
-appear as it reaches them), `Scrub.tsx` (pieces fade up as they arrive and drift up and away as they leave),
-and the pinned Work picker in `Work.tsx`. The first paint is ordered: header, opening statement, the facts,
-the dock, and only then the rest as it scrolls into view (`pre` class from the script in `layout.tsx`).
+public/
+  images/og.png
+  icons/icon.svg
+  icons/apple-icon.png
+  lohit-sai-resume.pdf
+  manifest.webmanifest
+  robots.txt
+  sitemap.xml
+```
 
-## Theme, logo and search
+---
 
-- **Theme button** (`ThemeToggle.tsx`): top right on wide screens, a round button beside the pill on phones. The new theme grows out of the button as a circle (View Transitions API); browsers without it, and reduced motion, switch instantly. The choice is saved in `localStorage` and restored before first paint by the small script in `layout.tsx`. With no saved choice the site follows the system theme.
-- **Logo**: an italic serif "l." drawn as paths (no font needed), in `Header.tsx`, `src/app/icon.svg` (adaptive favicon), `src/app/apple-icon.png` and `public/og.png`.
-- **Search**: full metadata and Open Graph/Twitter cards in `layout.tsx`, a JSON-LD graph (WebSite, ProfilePage, Person) in `page.tsx`, plus `public/sitemap.xml`, `public/robots.txt` and `public/manifest.webmanifest` (plain files, served from the site root). After deploying, add the site in Google Search Console and submit `https://lohitdev.vercel.app/sitemap.xml`.
+## Design notes
+
+- **Monochrome palette** — `#fcfcfb` light / `#0b0b0a` dark, two grey steps, one accent-free.
+- **No animation library** — all motion is CSS + IntersectionObserver + scroll events.
+- **Reduced motion** — hero effects and transitions are skipped for `prefers-reduced-motion`.
+- **Dark mode** — follows system, overrideable via the toggle; choice saved in `localStorage` and restored before first paint.
+- **Phone layout** — below 700 px the site switches to a separate editorial layout (same data file). Desktop is untouched.
+- **View Transitions API** — theme switch grows from the toggle as a circle; falls back to instant switch.
+
+---
+
+## Deploy
+
+1. Push to GitHub (`lohit-dev/lohit.dev`).
+2. In Vercel, connect this repo to the `lohitdev` project.
+3. Push — Vercel detects Next.js and builds. No settings to change.
+4. Add the site in Google Search Console and submit `https://lohitdev.vercel.app/sitemap.xml`.
+
+---
+
+## License
+
+Copyright © 2026 Dinavahi Lohith Sai. See [LICENSE](./LICENSE).  
+This portfolio is **not open source**. Viewing the code for reference is fine; copying it is not.
