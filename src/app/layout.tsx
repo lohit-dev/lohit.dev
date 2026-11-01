@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     'Dinavahi Lohith Sai',
     'Lohith Sai',
     'backend developer',
+    'iOS developer',
+    'React Native developer',
     'SDE-1',
     'software engineer',
     'Go developer',

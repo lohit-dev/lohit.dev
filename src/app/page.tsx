@@ -48,6 +48,7 @@ const jsonLd = {
         'Docker',
         'React',
         'React Native',
+        'Swift',
         'Android',
       ],
       alumniOf: { '@type': 'CollegeOrUniversity', name: 'NRI Institute of Technology, Agiripalli' },

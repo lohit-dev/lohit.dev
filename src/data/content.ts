@@ -5,7 +5,7 @@
 
 export const site = {
   name: 'Dinavahi Lohith Sai',
-  title: 'Backend Developer',
+  title: 'Software Developer',
   email: 'lohitsaidev@gmail.com',
   location: 'Vijayawada, India',
   url: 'https://lohitdev.vercel.app',
@@ -14,11 +14,11 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/dinavahi-lohit-sai-192a382b1/',
   motto: 'Error 404: Perfection Not Found.',
   description:
-    'Dinavahi Lohith Sai is a backend developer in Vijayawada working in Go, Rust and TypeScript, looking for an SDE-1 role.',
+    'Dinavahi Lohith Sai is a software developer in Vijayawada building services in Go, Rust and TypeScript and apps in React Native, learning native iOS in Swift, looking for an SDE-1 role.',
 };
 
 export const hero = {
-  lead: 'Backend developer in Vijayawada, building fast, reliable services in Go, Rust and TypeScript.',
+  lead: 'Software developer building fast, reliable services in Go, Rust and TypeScript, and apps in React Native. Learning native iOS in Swift.',
   tail: 'Looking for an SDE-1 role.',
 };
 
@@ -131,9 +131,9 @@ export const experience = {
 };
 
 export const stack = {
-  core: 'Go, Rust and TypeScript.',
+  core: 'Go, Rust and TypeScript, with Swift next.',
   // Words in [brackets] light up one by one as the line scrolls into view.
-  text: '[Node.js], [Axum] and [Chi] on the server. [PostgreSQL], [MySQL] and [MongoDB] for data. [Docker], [AWS], [Gitea] and [Coolify] to ship. [React], [Next.js] and [React Native] for screens. Also [Python], [Java] and [SQL].',
+  text: '[Node.js], [Express], [Axum], [Chi] and [GORM] on the server, with [WebSockets] for real time. [PostgreSQL], [MySQL] and [MongoDB] for data. [Docker], [AWS], [Gitea] and [Coolify] to ship. [React], [Next.js], [Tailwind] and [React Native] for screens. Learning native iOS in [Swift] and [SwiftUI].',
 };
 
 export const awards = [
@@ -162,13 +162,13 @@ export const awards = [
 ];
 
 export const contact = {
-  lede: "I'm looking for an SDE-1 backend role and I'm open to relocating.",
+  lede: "I'm looking for an SDE-1 role in backend, mobile or iOS, and I'm open to relocating.",
   spoken: "I speak English, Telugu and Hindi, and I'm learning Japanese.",
 };
 
 /** Small screens only: the quick facts under the opening statement. */
 export const facts = [
-  { label: 'Now', text: 'Open to SDE-1 backend roles, and to relocating' },
+  { label: 'Now', text: 'Open to SDE-1 backend, mobile and iOS roles, and to relocating' },
   { label: 'Before', text: '16 months at Hashira.io, building Go and Rust services' },
   { label: 'Won', text: '3rd place, Polkadot Cloud Hackathon, $1,000' },
   { label: 'Shipped', text: 'Two Android apps on Google Play' },
@@ -176,11 +176,11 @@ export const facts = [
 
 /** Small screens only: the stack as short labelled rows. */
 export const stackGroups = [
-  { label: 'Server', items: ['Node.js', 'Axum', 'Chi'] },
+  { label: 'Server', items: ['Node.js', 'Express', 'Axum', 'Chi', 'GORM', 'WebSockets'] },
   { label: 'Data', items: ['PostgreSQL', 'MySQL', 'MongoDB'] },
   { label: 'Ship', items: ['Docker', 'AWS', 'Gitea', 'Coolify'] },
-  { label: 'Screens', items: ['React', 'Next.js', 'React Native'] },
-  { label: 'Also', items: ['Python', 'Java', 'SQL'] },
+  { label: 'Screens', items: ['React', 'Next.js', 'Tailwind', 'React Native'] },
+  { label: 'Learning', items: ['Swift', 'SwiftUI'] },
 ];
 
 /** Small screens only: the contact headline. */
