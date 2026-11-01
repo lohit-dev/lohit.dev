@@ -22,7 +22,7 @@ const jsonLd = {
       mainEntity: { '@id': `${site.url}/#person` },
       primaryImageOfPage: {
         '@type': 'ImageObject',
-        url: `${site.url}/og.png`,
+        url: `${site.url}/images/og.png`,
         width: 1200,
         height: 630,
       },
@@ -35,7 +35,7 @@ const jsonLd = {
       jobTitle: site.title,
       description: site.description,
       url: site.url,
-      image: `${site.url}/og.png`,
+      image: `${site.url}/images/og.png`,
       email: `mailto:${site.email}`,
       knowsLanguage: ['en', 'te', 'hi'],
       knowsAbout: [

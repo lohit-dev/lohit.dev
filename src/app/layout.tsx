@@ -49,13 +49,15 @@ export const metadata: Metadata = {
     description: site.description,
     firstName: 'Lohith Sai',
     lastName: 'Dinavahi',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: `${site.name}, ${site.title}` }],
+    images: [
+      { url: '/images/og.png', width: 1200, height: 630, alt: `${site.name}, ${site.title}` },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description: site.description,
-    images: [{ url: '/og.png', alt: `${site.name}, ${site.title}` }],
+    images: [{ url: '/images/og.png', alt: `${site.name}, ${site.title}` }],
   },
   formatDetection: { telephone: false, address: false, email: false },
 };
