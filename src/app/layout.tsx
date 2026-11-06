@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     description: site.description,
     images: [{ url: '/images/og.png', alt: `${site.name}, ${site.title}` }],
   },
-  verification: { google: 'yiNZ4AE1FYKMFP8uIKUr-PS34X7PZlYt-40VEBdcaAU' },
+  verification: { google: 'IZUyF3YelyrKWNdn6UfVQ7N1ngq_CqBgImkSUwsPA8E' },
   formatDetection: { telephone: false, address: false, email: false },
 };
 
